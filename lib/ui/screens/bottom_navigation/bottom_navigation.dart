@@ -5,6 +5,7 @@ import 'package:teamapttest/ui/screens/cart/cart.dart';
 import 'package:teamapttest/ui/screens/favorite/favorite.dart';
 import 'package:teamapttest/ui/screens/home/home_view.dart';
 import 'package:teamapttest/utils/colors.dart';
+import 'package:teamapttest/utils/screensize.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -63,7 +64,7 @@ class _MyStatefulWidgetState extends State<BottomNavigation>
             children: [
               getViewForIndex(model.currentTabIndex),
               Positioned(
-                  bottom: 60,
+                  bottom:Responsive.height(context)/30,
                   right: 10,
                   left: 10,
                   child: SlideTransition(

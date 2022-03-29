@@ -1,14 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:teamapttest/core/model/Items.dart';
 import 'package:teamapttest/ui/screens/home/home_view_model.dart';
 import 'package:teamapttest/utils/colors.dart';
+import 'package:teamapttest/utils/screensize.dart';
 
 class ItemWidget extends StatefulWidget {
   final Items items;
 
-  ItemWidget(
-      {required this.items});
+  ItemWidget({required this.items});
 
   @override
   State<ItemWidget> createState() => _ItemWidgetState();
@@ -27,16 +26,16 @@ class _ItemWidgetState extends State<ItemWidget> {
             child: Image.asset(
               "assets/images/${widget.items.asset}",
               fit: BoxFit.fill,
-              height: 380,
-              width: 220,
+              height: Responsive.height(context) / 2.5,
+              width: Responsive.width(context) / 1.8,
             )),
         Padding(
             padding: const EdgeInsets.only(left: 10, right: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 320,
+                SizedBox(
+                  height: Responsive.height(context) / 3.1,
                 ),
                 Text(
                   widget.items.title!,

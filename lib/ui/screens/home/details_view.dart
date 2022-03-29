@@ -42,20 +42,22 @@ class LoginState extends State<Details> {
               backgroundColor: AppColors.peachColor,
               body: Padding(
                 padding: const EdgeInsets.all(10),
-                child: Column(
+                child:SingleChildScrollView(
+                  child:Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(
                         height: 50,
                       ),
                       CircleAvatar(
+                        radius: 20,
                         backgroundColor: AppColors.white,
                         child: IconButton(
                           padding: EdgeInsets.zero,
                           onPressed: () {
                             _navigationService.pop();
                           },
-                          icon: const Icon(Icons.arrow_back_ios,
+                          icon: const Icon(Icons.arrow_back_ios,size: 18,
                               color: AppColors.black),
                         ),
                       ),
@@ -397,7 +399,7 @@ class LoginState extends State<Details> {
                       )
                     ]),
                 //bottomNavigationBar:
-              ));
+                )));
         });
   }
 }

@@ -64,41 +64,89 @@ class CartPageState extends State<CartPage> {
                           Padding(
                               padding: const EdgeInsets.only(left: 40),
                               child: AnimationLimiter(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children:
-                                      AnimationConfiguration.toStaggeredList(
-                                    duration: const Duration(milliseconds: 500),
-                                    childAnimationBuilder: (widget) =>
-                                        SlideAnimation(
-                                      horizontalOffset:
-                                          MediaQuery.of(context).size.width / 4,
-                                      child: FadeInAnimation(
-                                          curve: Curves.fastOutSlowIn,
-                                          child: widget),
+                                  child: Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children:
+                                        AnimationConfiguration.toStaggeredList(
+                                      duration:
+                                          const Duration(milliseconds: 500),
+                                      childAnimationBuilder: (widget) =>
+                                          SlideAnimation(
+                                        horizontalOffset:
+                                            MediaQuery.of(context).size.width /
+                                                4,
+                                        child: FadeInAnimation(
+                                            curve: Curves.fastOutSlowIn,
+                                            child: widget),
+                                      ),
+                                      children: [
+                                        const Text(
+                                          'Cart',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 30,
+                                              color: AppColors.black),
+                                        ),
+                                        const Text(
+                                          'Cart items',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 30,
+                                              color: AppColors.black),
+                                        ),
+                                      ],
                                     ),
-                                    children: [
-                                      const Text(
-                                        'Cart',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 30,
-                                            color: AppColors.black),
-                                      ),
-                                      const Text(
-                                        'Cart items',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 30,
-                                            color: AppColors.black),
-                                      ),
-                                    ],
                                   ),
-                                ),
-                              )),
+                                  Center(
+                                      child: InkWell(
+                                          onTap: () {},
+                                          child: Container(
+                                              height: 60,
+                                              width: 180,
+                                              margin: const EdgeInsets.all(10),
+                                              padding: const EdgeInsets.all(10),
+                                              alignment: Alignment.center,
+                                              decoration: const BoxDecoration(
+                                                  color: Colors.black,
+                                                  borderRadius: BorderRadius
+                                                      .all(Radius.circular(
+                                                          20.0)), // Set rounded corner radius
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                        blurRadius: 10,
+                                                        color: Colors.black,
+                                                        offset: Offset(1, 3))
+                                                  ] // Make rounded corner of border
+                                                  ),
+                                              child: Row(
+                                                children: const [
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Text(
+                                                    "Checkout",
+                                                    style: TextStyle(
+                                                        color: AppColors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 50,
+                                                  ),
+                                                  Icon(
+                                                    Icons.payments_outlined,
+                                                    color: AppColors.white,
+                                                  ),
+                                                ],
+                                              ))))
+                                ],
+                              ))),
                           const SizedBox(
-                            height: 100,
+                            height: 50,
                           ),
                           SizedBox(
                               height: 400,
@@ -131,50 +179,6 @@ class CartPageState extends State<CartPage> {
                                   ),
                                 ),
                               )),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Center(
-                              child: InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                      height: 60,
-                                      width: 300,
-                                      margin: const EdgeInsets.all(10),
-                                      padding: const EdgeInsets.all(10),
-                                      alignment: Alignment.center,
-                                      decoration: const BoxDecoration(
-                                          color: Colors.black,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(
-                                                  20.0)), // Set rounded corner radius
-                                          boxShadow: [
-                                            BoxShadow(
-                                                blurRadius: 10,
-                                                color: Colors.black,
-                                                offset: Offset(1, 3))
-                                          ] // Make rounded corner of border
-                                          ),
-                                      child: Row(
-                                        children: const [
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          Text(
-                                            "Proceed to checkout",
-                                            style: TextStyle(
-                                                color: AppColors.white,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          SizedBox(
-                                            width: 50,
-                                          ),
-                                          Icon(
-                                            Icons.payments_outlined,
-                                            color: AppColors.white,
-                                          ),
-                                        ],
-                                      ))))
                         ]));
         });
   }

@@ -63,8 +63,8 @@ class LoginState extends State<FirstScreen> {
                                   color: AppColors.salmonColor,
                                   shape: BoxShape.rectangle,
                                 ),
-                                height: 500,
-                                width: Responsive.width(context) / 1.4,
+                                height: Responsive.height(context) / 1.8,
+                                width: Responsive.width(context) / 1.8,
                               ),
                             ],
                           ),
@@ -74,8 +74,8 @@ class LoginState extends State<FirstScreen> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            height: 100,
+                          SizedBox(
+                            height: Responsive.height(context) / 12,
                           ),
                           AnimationLimiter(
                             child: Row(
@@ -109,8 +109,8 @@ class LoginState extends State<FirstScreen> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 60,
+                          SizedBox(
+                            height: Responsive.height(context) / 18,
                           ),
                           AnimationLimiter(
                             child: Row(
@@ -137,8 +137,8 @@ class LoginState extends State<FirstScreen> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: Responsive.height(context) / 18,
                           ),
                           AnimationLimiter(
                             child: Row(
@@ -166,7 +166,7 @@ class LoginState extends State<FirstScreen> {
                             ),
                           ),
                           const SizedBox(
-                            height: 30,
+                            height: 25,
                           ),
                           AnimationLimiter(
                             child: Row(
@@ -193,8 +193,8 @@ class LoginState extends State<FirstScreen> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 60,
+                          SizedBox(
+                            height: Responsive.height(context) / 11,
                           ),
                           AnimationLimiter(
                             child: Column(
@@ -213,7 +213,7 @@ class LoginState extends State<FirstScreen> {
                                     'Be faithful to your own taste because',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 14,
+                                        fontSize: 11,
                                         color: AppColors.black),
                                   ),
                                 ],
@@ -237,7 +237,7 @@ class LoginState extends State<FirstScreen> {
                                     'nothing you really like is ever out of style',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 14,
+                                        fontSize: 10,
                                         color: AppColors.black),
                                   ),
                                 ],

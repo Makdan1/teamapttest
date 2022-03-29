@@ -95,7 +95,7 @@ class FavoritePageState extends State<FavoritePage> {
                                 ),
                               )),
                           const SizedBox(
-                            height: 100,
+                            height: 50,
                           ),
                           Expanded(
                               child: ListView.builder(
