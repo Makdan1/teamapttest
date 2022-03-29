@@ -60,7 +60,6 @@ class DatabaseService {
     $price      TEXT
     )''';
 
-
     const cartTable = '''CREATE TABLE $cart(
       $id INTEGER PRIMARY KEY,
    $itemId TEXT,
@@ -73,11 +72,7 @@ class DatabaseService {
 
     await db.execute(favoriteTable);
     await db.execute(cartTable);
-
   }
-
-
-
 
   //Insert favorite to the database
   static Future<int> insert(Items items) async {
@@ -86,7 +81,6 @@ class DatabaseService {
       items.toJson(),
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
-    print('EmployeeMessage inserted to the database $messageId');
     return messageId;
   }
 
@@ -97,7 +91,6 @@ class DatabaseService {
       items.toJson(),
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
-    print('EmployeeMessage inserted to the database $messageId');
     return messageId;
   }
 
@@ -144,8 +137,8 @@ class DatabaseService {
   }
 
   Future<int> deleteCart(Items items) async {
-    int result = await db!
-        .delete(cart, where: '$itemId = ?', whereArgs: [items.itemId]);
+    int result =
+        await db!.delete(cart, where: '$itemId = ?', whereArgs: [items.itemId]);
     return result;
   }
 }
